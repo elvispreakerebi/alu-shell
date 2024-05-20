@@ -1,2 +1,2 @@
 #!/bin/bash
-mv /path/to/source/[A-Z]* /tmp/u
+mv /path/to/source/[A-Z]* /tmp/u/
