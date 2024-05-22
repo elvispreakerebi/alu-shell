@@ -1,0 +1,13 @@
+total 12
+drwxr-xr-x 8 root root  193 May 22 04:09 .
+drwxr-xr-x 1 root root   88 May 22 02:34 ..
+-rw-r--r-- 1 root root   42 May 21 13:41 10-mirrow_permissions
+drwxr-xr-x 2 root root 4096 May 21 01:26 basics
+drwxr-xr-x 8 root root  185 May 22 03:25 .git
+-rwxr-x--x 1 root root    0 May 21 01:37 hello
+drwxr-xr-x 2 root root  198 May 22 04:08 io_redirections_and_filters
+lrwxrwxrwx 1 root root    7 May 20 11:11 __ls__ -> /bin/ls
+-rw-r--r-- 1 root root    0 May 22 04:09 ls_cwd_content
+drwxr-x--x 2 root root    6 May 21 14:17 my_dir
+drwxr-xr-x 2 root root 4096 May 21 14:46 permissions
+drwxr-xr-x 3 root root   16 May 20 11:44 welcome
