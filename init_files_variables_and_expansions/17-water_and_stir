@@ -1,2 +1,2 @@
 #!/bin/bash
-WATER="$WATER" STIR="$STIR" python3 -c 'print(int(input(), len(os.environ["WATER"])) + int(input(), len(os.environ["STIR"])), end="")' | python3 -c 'print(int(input()), len(os.environ["WATER"]))'
+echo "obase=bestchol; ibase=water; $WATER + ibase=stir; $STIR" | bc
