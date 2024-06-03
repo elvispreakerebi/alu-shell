@@ -1,14 +1,11 @@
 #!/usr/bin/env bash
 # This script stops the 4-to_infinity_and_beyond process without using kill or killall
 
-# Find the PID of the 4-to_infinity_and_beyond process
-pid=$(pgrep 4-to_infinity_and_beyond)
+# Find the PID of the process
+pid=$(pgrep -f 4-to_infinity_and_beyond)
 
-# If the process is found, send the SIGTERM signal by writing to /proc/[pid]/task/[pid]/syscall
-if [[ -n "$pid" ]]; then
-    echo "Terminating process 4-to_infinity_and_beyond with PID: $pid"
-    # Send SIGTERM signal (signal number 15)
-    echo -n 15 > /proc/$pid/task/$pid/syscall
-else
-    echo "Process 4-to_infinity_and_beyond not found"
+# Check if the process is found
+if [ -n "$pid" ]; then
+  # Stop the process by sending the SIGTERM signal using pkill
+  pkill -SIGTERM -f 4-to_infinity_and_beyond
 fi
