@@ -1,0 +1,47 @@
+#!/usr/bin/env bash
+# Script to manage the background process manage_my_process
+
+# Check if argument is passed
+if [[ $# -eq 0 ]]; then
+    echo "Usage: $0 {start|stop|restart}"
+    exit 1
+fi
+
+# Define function to start the process
+start_process() {
+    /path/to/manage_my_process &
+    echo $! > /var/run/my_process.pid
+    echo "manage_my_process started"
+}
+
+# Define function to stop the process
+stop_process() {
+    kill $(cat /var/run/my_process.pid)
+    rm /var/run/my_process.pid
+    echo "manage_my_process stopped"
+}
+
+# Define function to restart the process
+restart_process() {
+    stop_process
+    start_process
+    echo "manage_my_process restarted"
+}
+
+# Handle different arguments
+case "$1" in
+    start)
+        start_process
+        ;;
+    stop)
+        stop_process
+        ;;
+    restart)
+        restart_process
+        ;;
+    *)
+        echo "Usage: $0 {start|stop|restart}"
+        exit 1
+esac
+
+exit 0
