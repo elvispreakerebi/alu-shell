@@ -1,0 +1,17 @@
+#!/usr/bin/env bash
+# This script forcefully kills the process named 7-highlander
+
+# Get the PID of the process named 7-highlander
+pid=$(pgrep -f '7-highlander')
+
+# Check if the PID exists and then forcefully kill the process
+if [[ -n "$pid" ]]; then
+    kill -9 "$pid"
+    if [[ $? -eq 0 ]]; then
+        echo "Process 7-highlander (PID $pid) has been forcefully killed."
+    else
+        echo "Failed to kill process 7-highlander (PID $pid)."
+    fi
+else
+    echo "Process 7-highlander not found."
+fi
